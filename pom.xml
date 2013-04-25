@@ -44,6 +44,10 @@
 		</plugins>
 	</build> 
 	<artifactId>java-windows-service-sample</artifactId>
-	<name>Java Windows Service Sample</name>
+	<name>java-windows-service-sample</name>
 	<description>A sample Java application that can run as a Windows service.</description>
+	<organization>
+		<name>Benj Sicam</name>
+		<url>http://benjsicam.me</url>
+	</organization>
 </project>
