@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>JavaWindowsServiceSample</name>
-	<comment>This project is a simple template for a jar utility using Spring.
-  </comment>
+	<name>java-windows-service-sample</name>
+	<comment>A simple example of a Java + Spring Framework Program that can be run as a background process or a Windows Service.</comment>
 	<projects>
 	</projects>
 	<buildSpec>
