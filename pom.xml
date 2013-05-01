@@ -3,31 +3,30 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.sample.javawindowsservice</groupId>
+	<groupId>com.sample</groupId>
 	<version>0.1</version>
 	<packaging>jar</packaging>
-	<url>http://benjsicam.me</url>
+	<url>http://benjsicam.me/</url>
 	<properties>
-		<maven.test.failure.ignore>true</maven.test.failure.ignore>
 		<java.version>7</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.framework.version>3.2.1.RELEASE</spring.framework.version>
+		<spring.version>3.2.1.RELEASE</spring.version>
 	</properties>	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>${spring.framework.version}</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>${spring.framework.version}</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
-			<version>${spring.framework.version}</version>
+			<version>${spring.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -48,6 +47,6 @@
 	<description>A sample Java application that can run as a Windows service.</description>
 	<organization>
 		<name>Benj Sicam</name>
-		<url>http://benjsicam.me</url>
+		<url>http://benjsicam.me/</url>
 	</organization>
 </project>
