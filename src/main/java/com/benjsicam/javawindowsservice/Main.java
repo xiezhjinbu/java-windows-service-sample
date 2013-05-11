@@ -1,4 +1,4 @@
-package com.sample.javawindowsservice;
+package com.benjsicam.javawindowsservice;
 
 import org.tanukisoftware.wrapper.WrapperListener;
 import org.tanukisoftware.wrapper.WrapperManager;

@@ -1,4 +1,4 @@
-package com.sample.javawindowsservice;
+package com.benjsicam.javawindowsservice;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

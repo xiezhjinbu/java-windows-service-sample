@@ -1,4 +1,4 @@
-package com.sample.javawindowsservice;
+package com.benjsicam.javawindowsservice;
 
 import java.util.Date;
 
