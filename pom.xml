@@ -6,23 +6,13 @@
 	<groupId>com.benjsicam</groupId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
-	<url>http://benjsicam.me/</url>
+	<url>http://thisdotlife.com/</url>
 	<properties>
-		<java.version>7</java.version>
+		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>3.2.1.RELEASE</spring.version>
+		<spring.version>4.0.6.RELEASE</spring.version>
 	</properties>	
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
