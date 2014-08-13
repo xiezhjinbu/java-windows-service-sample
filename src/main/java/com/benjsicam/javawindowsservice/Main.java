@@ -1,10 +1,10 @@
 package com.benjsicam.javawindowsservice;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.tanukisoftware.wrapper.WrapperListener;
 import org.tanukisoftware.wrapper.WrapperManager;
 
 public class Main implements WrapperListener {
-	WindowsServiceApp javaWindowsServiceSample;
 
 	public static void main(String[] args) {
 		WrapperManager.start(new Main(), args);
@@ -20,9 +20,9 @@ public class Main implements WrapperListener {
 		}
 	}
 
+	@SuppressWarnings("resource")
 	public Integer start(String[] arg0) {
-		javaWindowsServiceSample = new WindowsServiceApp();
-		javaWindowsServiceSample.start();
+		new AnnotationConfigApplicationContext(AppConfiguration.class);
 		
 		return null;
 	}
