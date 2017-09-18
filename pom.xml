@@ -11,12 +11,25 @@
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>4.0.6.RELEASE</spring.version>
+		<junit.version>4.11</junit.version>
+		<log4j.version>1.2.16</log4j.version>
 	</properties>	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -29,6 +42,38 @@
 					<target>${java.version}</target>
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<!-- assembly版本 -->
+				<version>2.2.1</version>
+				<executions>
+					<!-- 若要同时打多个包（如windows和linux不同系统的包），可配置多个execution，此处只打zip，因此配置一个 -->
+					<execution>
+						<!-- id标识，唯一即可 -->
+						<id>make-wrapper-win-zip</id>
+						<!-- 设置package阶段进行 -->
+						<phase>package</phase>
+						<goals>
+							<!-- 只运行一次 -->
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<!-- 输出的最终名称，自动添加格式后缀（如zip），当前示例为jsw-test.zip -->
+							<finalName>jsw-test</finalName>
+							<!-- 配置是否添加id到名称中，若为true，当前示例中，则为jsw-test-zip.zip，false即不添加，只是jsw-test.zip；
+                            若同时打多个包，则可设为true，分别添加id以作区分-->
+							<appendAssemblyId>true</appendAssemblyId>
+							<!-- 打包的输出目录，可自定义，${project.build.directory}为编译输出目录，即target目录 -->
+							<outputDirectory>${project.build.directory}</outputDirectory>
+							<descriptors>
+								<!-- 使用的描述符，按此描述进行打包，此处配置一个zip.xml表示打zip包 -->
+								<descriptor>src/main/assembly/wrapper-win-zip.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build> 
