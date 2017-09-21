@@ -38,7 +38,7 @@ public class ChangeXmlFile {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("D://DB/updated.xml"));
+            StreamResult result = new StreamResult(new File("D:\\EportPisServer\\message\\Transmission\\FileReceive\\bomupdated.xml"));
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.transform(source, result);
             System.out.println("XML file updated successfully");

@@ -75,10 +75,10 @@ public class FileListenerAdaptor  extends FileAlterationListenerAdaptor{
 		 @Override  
 		 public void onFileCreate(File file) {  
 		  // TODO Auto-generated method stub  
-		  super.onFileCreate(file);  
-		  System.out.println("文件创建成功！");
-		  
-		  logger.info("文件创建事件");  
+		  super.onFileCreate(file);
+		  ChangeXmlFile.readFile(file);
+		  System.out.println("文件修改完成");
+		  logger.info("文件创建成功");
 		  logger.info("文件名称：" + file.getName());  
 		  
 		 }  
@@ -104,30 +104,5 @@ public class FileListenerAdaptor  extends FileAlterationListenerAdaptor{
 		  System.out.println("文件删除成功！");
 		  logger.info("文件删除事件:" + file.getName());  
 		 }  
-		
-			public static void main(String[] args) {  
-				  try {  
 
-				        // 轮询间隔 5 秒  
-				        long interval = TimeUnit.SECONDS.toMillis(5);  
-				        //   
-				        FileAlterationObserver observer = new FileAlterationObserver(  
-				                                              "D://DB",   
-				                                              FileFilterUtils.and(  
-				                                               FileFilterUtils.fileFileFilter(),  
-				                                               FileFilterUtils.suffixFileFilter(".java")),   
-				                                              null);  
-				        observer.addListener(new FileListenerAdaptor()); 
-						   // 配置Monitor，第一个参数单位是毫秒，是监听的间隔；第二个参数就是绑定我们之前的观察对象。  
-						   FileAlterationMonitor fileMonitor = new FileAlterationMonitor(interval,  
-						     new FileAlterationObserver[] { observer });  
-						   // 启动开始监听  
-						   fileMonitor.start();  
-						   
-				  } catch (Exception e) {  
-					  	
-					  e.printStackTrace();  
-					  
-				  }  
-				 }  	
 }
